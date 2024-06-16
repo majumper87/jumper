@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Databases</title>
+        <link rel="stylesheet" href="./css/styles.css">
+
+    </head>
+    <body>
+        <div>
+            <header class="header">
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="https://www.youtube.com/watch?v=61-91g-ROuA&ab_channel=MarkJumper">Code Review</a></li>
+                        <li><a href="software.html">Software Design and Engineering</a></li>
+                        <li><a href="datastructures.html">Data Structures and Algorithms</a></li>
+                        <li><a href="databases.html">Databases</a></li>
+                    </ul>
+                </nav>
+            </header>
+        </div>
+        <main>
+            <h1>Databases</h1>
+            <hr/>
+            <h2>Description:</h2>
+            <ul>
+                <li>Create SQL database using SSMS</li>
+                <li>Create stored procedures for queries used in original project</li>
+                <li>Create stored procedures to return hashed password for user verification</li>
+                <li>Create methods to perform CRUD operations in the database</li>
+            </ul>
+            <h2>Narrative:</h2>
+            <p>
+                For databases, I chose to continue with the CS 340 project from Software Design and Engineering. 
+                I chose this project as it shows how to work with both a non-relational and, for my enhancement, 
+                a relational database. Also, for my enhancement, I wanted to add a level of security by creating 
+                a login screen and implement hashing to store user’s passwords. Along with this, I also created 
+                a basic “user role” column to determine permissions for use of CRUD operations. 
+            </p>
+            <p>
+                This project originally used a MongoDB database. First, I learned how to work with the MongoDB 
+                database from the command line to read, write, update and delete collections in the database. 
+            </p>
+            <img src="./images/MDB1.png" alt="MongoDB image one">
+            <img src="./images/MDB2.png" alt="MongoDB image two">
+            <img src="./images/MDB3.png" alt="MongoDB image three">
+            <p>
+                For the project, I created the AnimalShelter.py using the python library called PyMongo to 
+                open a connection and implement CRUD methods to work with the database – create (lines 26-38), 
+                read (lines 45-52), update (lines 58-72), and delete (lines 76-89). This used similar syntax to 
+                the MongoDB commands, which made creating and testing the python definitions simpler. The real 
+                challenge was learning to query for specific results, which are found in the 
+                ProjectTwoDashboard.ipybn for the radio buttons.
+            </p>
+            <img src="./images/MDBqueries.png" alt="PyMongo queries">
+            <p>
+                For my enhancement, I chose to recreate the database and use it within a WPF (Windows 
+                Presentation Foundation) Application. To do this, I used Microsoft’s SSMS and SQL. I first had 
+                to learn how to input a .csv file to create the table. Secondly, I had to learn how to create 
+                and implement stored procedures as that is how I wanted to return the required results for the 
+                filters in the MainWindow.cs. As part of the CRUD methods in the Update.cs, I used object 
+                oriented programming to work with the textboxes to create, read, update and delete. Lastly, my 
+                final enhancement was to create a User table and implement a Login Screen to be able to perform 
+                these operations. For this, I had to learn how to use the HASHBYTE function in SQL to store the 
+                passwords and then create another stored procedure that would take the password input from the 
+                user, hash it, then return the hashed password to check against the stored password in the 
+                database as seen in the Login.cs file. For test purposes, I kept the username and password 
+                simple by using the email of the user and the password set to User123 (eg: Admin@Test.com, 
+                Admin123). To implement this into the application I used the following code, which also utilizes 
+                a LINQ query:
+            </p>
+            <img src="./images/WPFpasswordcheck.png" alt="C Sharp code to verify password">
+            <p>
+                The same is true for the filter buttons, for example:
+            </p>
+            <img src="./images/WPFstoredprocedureExample.png" alt="C Sharp impementing stored procedure example">
+            <p>
+                Stored procedure for MianWindow.cs:
+            </p>
+            <img src="./images/WFPMainWindowSP.png" alt="Main Window Stored Procedure">
+            <p>
+                Stored procedure for Individual Rescue:
+            </p>
+            <img src="./images/WPFSPindividualRescue.png" alt="Stored Procedure Individual Rescue">
+            <p>
+                Stored procedure for Mountain/Wilderness Rescue:
+            </p>
+            <img src="./images/WPFSPWildernessRescue.png" alt="Stored Procedure for Mountain Rescue">
+            <p>
+                Stored Procedure for Water Rescue:
+            </p>
+            <img src="./images/WPFSPWaterRescue.png" alt="Stored Procedure for Water Rescue">
+            <p>
+                Stored Procedure for Returning HASH for verifying password:
+            </p>
+            <img src="./images/WPFSPPasswordChecker.png" alt="Stored Procedure for Checking Password HASH">
+        </main>
+    </body>
+</html>
